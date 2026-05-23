@@ -1,11 +1,11 @@
 function App() {
-    const path = window.location.pathname;
+    const host = window.location.hostname;
   
-    if (path.startsWith("/a/htcai")) {
+    if (host === "htcai.local") {
       return <h1 style={{ textAlign: "center", marginTop: "100px" }}>🔥 HTCAI Workspace</h1>;
     }
   
-    if (path.startsWith("/a/tecneuralai")) {
+    if (host === "tecneuralai.local") {
       return <h1 style={{ textAlign: "center", marginTop: "100px" }}>⚡ TecNeuralAI Workspace</h1>;
     }
   
