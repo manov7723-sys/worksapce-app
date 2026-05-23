@@ -1,18 +1,22 @@
 version: "3.8"
-
 services:
   app:
     build: .
-    container_name: app
-    expose:
-      - "3000"
+    ports:
+      - "3000:3000"
+    networks:
+      - crew-net
 
   nginx:
     image: nginx:alpine
-    container_name: nginx
     ports:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
+    networks:
+      - crew-net
+
+networks:
+  crew-net:
